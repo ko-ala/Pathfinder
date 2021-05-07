@@ -1,5 +1,8 @@
 # Implementation of the A* pathfinding algorithm
 # F=G+H
+# F is total cost of node
+# G is distance between current node and start node
+# H is heuristic: estimated distance to the end node
 
 class Node():
 
@@ -13,9 +16,13 @@ class Node():
     def __eq__(self, other):
         return (self.position==other.position)
 
-    # override toString
+    # override str
     def __str__(self):
         return (str(self.position))
+
+    # override repr
+    def __repr__(self):
+        return self.__str__()
 
 # Parameters:
 # maze = map
